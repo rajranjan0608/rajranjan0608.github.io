@@ -1,0 +1,228 @@
+<div>
+    <style> 
+
+        /*assign full width inputs*/ 
+        .signInput { 
+            width: 100%; 
+            padding: 12px 20px; 
+            margin: 8px 0; 
+            display: inline-block; 
+            border: 1px solid #ccc; 
+            box-sizing: border-box; 
+        } 
+    
+        .w3sbuttonGreen {
+            background-color: #2464c4; /* Green */
+            border: none;
+            border-radius: 5px;
+            color: white;
+            padding: 5px 22px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+        }
+        
+        /* set a hover effect for the button*/ 
+        button:hover { 
+            opacity: 0.8; 
+        } 
+        
+        /*set extra style for the cancel button*/ 
+        .cancelbtn { 
+            width: auto; 
+            padding: 10px 18px; 
+            background-color: #f44336; 
+        } 
+        
+        /*centre the display image inside the container*/ 
+        .imgcontainer { 
+            text-align: center; 
+            margin: 24px 0 12px 0; 
+            position: relative; 
+        } 
+        
+        /*set image properties*/ 
+        img.avatar { 
+            width: 100px;
+            height: 100px; 
+            border-radius: 50%; 
+        } 
+        
+        /*set padding to the container*/ 
+        .container { 
+            padding: 16px; 
+        } 
+        
+        /*set the forgot password text*/ 
+        span.psw { 
+            float: right; 
+            padding-top: 16px; 
+        } 
+        
+        /*set the Modal background*/ 
+        .modal2 { 
+            display: none; 
+            position: fixed; 
+            z-index: 1; 
+            left: 0; 
+            top: 0; 
+            width: 100%; 
+            height: 100%; 
+            overflow: auto; 
+            background-color: rgb(0, 0, 0); 
+            background-color: rgba(0, 0, 0, 0.8); 
+            padding-top: 20px; 
+        } 
+        
+        /*style the model content box*/ 
+        .modal-content { 
+            background-color: #fefefe; 
+            margin: 5% auto 15% auto; 
+            border: 1px solid #888; 
+            width: 80%;
+            max-width: 400px; 
+        } 
+        
+        /*style the close button*/ 
+        .close { 
+            position: absolute; 
+            right: 5px; 
+            top: 5px; 
+            color: #000; 
+            font-size: 35px; 
+        } 
+        
+        .close:hover, 
+        .close:focus { 
+            color: red; 
+            cursor: pointer; 
+        } 
+        
+        /* add zoom animation*/ 
+        .animate { 
+            -webkit-animation: animatezoom 0.6s; 
+            animation: animatezoom 0.6s 
+        } 
+        
+        @-webkit-keyframes animatezoom { 
+            from { 
+                -webkit-transform: scale(0) 
+            } 
+            to { 
+                -webkit-transform: scale(1) 
+            } 
+        } 
+        
+        @keyframes animatezoom { 
+            from { 
+                transform: scale(0) 
+            } 
+            to { 
+                transform: scale(1) 
+            } 
+        } 
+        
+        @media screen and (max-width: 300px) { 
+            span.psw { 
+                display: block; 
+                float: none; 
+            } 
+            .cancelbtn { 
+                width: 100%; 
+            } 
+        } 
+    </style> 
+
+    <div id="id01" class="modal2"> 
+
+        <form id="signIn" class="modal-content animate" action="http://docs.google.com/forms/u/0/d/e/1FAIpQLSdKWWTjREMZzLFgtopSwsEx2rL95cAyOMSK_pUAR3clZExXKg/formResponse" method="POST" style="width: 95%; max-width: 600px; min-height: 400px"> 
+            <img style="width: 20px; height: 20px" onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal" src='https://img.icons8.com/fluent/48/000000/cancel.png'> 
+        
+            <div id="formContainer" class="container">
+                <font size = 2 style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">
+                    <label><b>Employer *</b></label> 
+                    <input type="text" class="signInput" placeholder="Company name preferred" name="entry.1763134178" required> 
+                    
+                    <br><br>
+                    <label><b>Company Website *</b></label> 
+                    <input type="text" class="signInput" placeholder="Provide the link to employer company" name="entry.2041169124" required> 
+
+                    <br><br>
+                    <label><b>Role *</b></label> 
+                    <input type="text" class="signInput" placeholder="For which role you are hiring me?" name="entry.15888271" required> 
+                    
+                    <br><br>
+                    <label><b>Cost to Company (in LPA)</b></label> 
+                    <input type="text" class="signInput" placeholder="Minimum CTC that the company will offer" name="entry.2084284748" required> 
+
+                    <br><br>
+                    <label><b>How should I contact you? *</b></label> 
+                    <input type="text" class="signInput" placeholder="Email Address preferred" name="entry.307414060" required> 
+
+                    <br><br>
+                    <label><b>Details or related information</b></label> 
+                    <textarea placeholder="hi" type="text" class="signInput" rows="4" name="entry.756506980" required>                         
+                    </textarea>
+                    
+                    <br><br>
+                    <center>
+                        <button type="submit" class="w3sbuttonGreen">Send</button>
+                    </center>
+                </font>
+            </div> 
+        </form> 
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+        
+    <script> 
+        var modal = document.getElementById('id01'); 
+        var signIn = document.getElementById('signIn');
+        var formContainer = document.getElementById('formContainer')
+
+        window.onclick = function(event) { 
+            if (event.target == modal) { 
+                modal.style.display = "none"; 
+            } 
+        }
+        
+        function showLoginModal() {
+            document.getElementById('id01').style.display='block';
+            signIn.style.display = 'block';
+        }
+
+        function submitHiringRequest() {
+            var formData = $("#signIn").serializeArray();
+            console.log(formData);
+            formContainer.innerHTML = `<center style="margin-top: 100px;">
+                                            <img style="width: 150px" class="loader-img" src="https://staticgw1.paytm.in/common/images/loader.gif" alt="Loading...">
+                                            <br><br>
+                                            <font size = 3><b>Submitting hiring request!</b></font>
+                                        </center>`;
+            
+            $.ajax({
+                type: "POST",
+                url: 'https://cors-anywhere.herokuapp.com/https://docs.google.com/forms/u/0/d/e/1FAIpQLSdKWWTjREMZzLFgtopSwsEx2rL95cAyOMSK_pUAR3clZExXKg/formResponse',
+                data: formData,
+                success: function(data) {
+                    formContainer.innerHTML = `<center style='margin-top: 30px'>
+                                                    <img src='https://renocompass.ca/web/estimator/en/assets/imgs/check.gif'><br>
+
+                                                    <font size = 3 color = 'green'><b>Thank you! We will be in touch soon.</b></font>
+                                                </center>
+                                            `
+                }
+            });
+        }
+
+        $('#signIn').submit(function(e){
+            e.preventDefault(); // prevents page reloading
+
+            submitHiringRequest()
+
+            return false; 
+        });
+    </script> 
+</div>

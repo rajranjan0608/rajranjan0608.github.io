@@ -1,0 +1,122 @@
+<style>
+
+    #hamBurger {
+      transition: transform 0.4s;
+    }
+  
+    #sideNav {
+      transition: transform 0.4s;
+    }
+  
+    @media only screen and (min-width: 992px) {
+      #sideNav {
+        transform: translateX(-240px);
+      }
+  
+      #hamBurger {
+        transform: translateX(240px);
+        display: none;
+      }
+    }
+  
+    @media only screen and (max-width: 992px) {
+      #sideNav {
+        transform: translateX(-240px)
+      }
+    }
+  
+    #sideNav::-webkit-scrollbar {
+      width: 2px;
+    }
+  
+    #sideNav::-webkit-scrollbar-track {
+      box-shadow: inset 0 0 5px rgb(255, 255, 255);
+      background-color: rgb(218, 218, 218);
+      border-radius: 10px;
+    }
+  
+    #sideNav::-webkit-scrollbar-thumb {
+      background: rgb(194, 189, 189);
+      border-radius: 10px;
+    }
+  
+    #coverAll {
+      width:100%;
+      height:100%;
+      opacity:.95;
+      top:0;
+      left:0;
+      display:none;
+      position:fixed;
+      background-color:rgba(0, 0, 0, 0.5);
+      overflow:auto
+    }
+
+    td font:active{
+        font-weight:bold;
+    }
+  </style>
+  
+  <div id="coverAll" onclick="hideSideNav()"></div>
+  
+  <div id="sideNav" class="shadow-lg" style="z-index: 10000; background-color: white; top: 0px; width: 240px; float: left; height: 100vh; position: fixed; overflow-y: scroll;">
+  
+    <center style="margin-top: 20px">
+        <img 
+            src = "https://avatars1.githubusercontent.com/u/40765810?s=460&u=d13e84ffbf2dba6646f5a6fd2ae94d8995f1355b&v=4"
+            style = "border-radius: 50px; width: 80px; height: 80px; padding: 5px;"
+            class = "shadow"
+        />
+    </center>
+
+    <table class="table table-hover table-border" style="text-align: center; margin-top: 15px; cursor: pointer;">
+        <tr onclick="location.href='#about'">
+            <td><a href="#about"><font size=2 class="text-muted">About Me</font></a></td>
+        </tr>
+  
+        <tr onclick="location.href='#skills'">
+            <td><font size=2 class="text-muted">Skills</font></td>
+        </tr>
+  
+        <tr onclick="location.href='/resume.html'">
+            <td><font size=2 class="text-muted">Resume</font></td>
+        </tr>
+  
+        <tr onclick="location.href='#projects'">
+            <td><font size=2 class="text-muted">Projects</font></td>
+        </tr>
+        
+        <tr onclick="location.href='#faq'">
+          <td><font size=2 class="text-muted">FAQ</font></td>
+        </tr>
+  
+        <tr onclick="location.href='#contact'">
+            <td><font size=2 class="text-muted">Contact Me</font></td>
+        </tr>
+    </table>  
+  </div>
+  
+  <script>
+  
+    var state = false;
+    function showSideNav() {
+      if(state == false) {
+        state = true;
+        document.getElementById('coverAll').style.display = 'block';
+        document.getElementById('sideNav').style.transform = 'translateX(0px)';
+        document.getElementById('hamBurger').style.transform = 'translateX(240px)';
+      } else {
+        state = false;
+        document.getElementById('coverAll').style.display = 'none';
+        document.getElementById('sideNav').style.transform = 'translateX(-240px)'
+        document.getElementById('hamBurger').style.transform = 'translateX(0px)'
+      }  
+    }
+  
+    function hideSideNav() {
+      if(state == true) {
+        showSideNav();
+      }
+    }
+  
+  </script>
