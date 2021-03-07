@@ -96,27 +96,25 @@
     </table>  
   </div>
   
-  <script>
-  
-    var state = false;
-    function showSideNav() {
-      if(state == false) {
-        state = true;
-        document.getElementById('coverAll').style.display = 'block';
-        document.getElementById('sideNav').style.transform = 'translateX(0px)';
-        document.getElementById('hamBurger').style.transform = 'translateX(240px)';
-      } else {
-        state = false;
-        document.getElementById('coverAll').style.display = 'none';
-        document.getElementById('sideNav').style.transform = 'translateX(-240px)'
-        document.getElementById('hamBurger').style.transform = 'translateX(0px)'
-      }  
+<script>
+  var state = false;
+  function showSideNav() {
+    if(state == false) {
+      state = true;
+      document.getElementById('coverAll').style.display = 'block';
+      document.getElementById('sideNav').style.transform = 'translateX(0px)';
+      document.getElementById('hamBurger').style.transform = 'translateX(240px)';
+    } else {
+      state = false;
+      document.getElementById('coverAll').style.display = 'none';
+      document.getElementById('sideNav').style.transform = 'translateX(-240px)'
+      document.getElementById('hamBurger').style.transform = 'translateX(0px)'
+    }  
+  }
+
+  function hideSideNav() {
+    if(state == true) {
+      showSideNav();
     }
-  
-    function hideSideNav() {
-      if(state == true) {
-        showSideNav();
-      }
-    }
-  
-  </script>
+  }
+</script>
